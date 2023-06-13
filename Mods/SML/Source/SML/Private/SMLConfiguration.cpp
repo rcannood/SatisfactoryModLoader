@@ -9,12 +9,6 @@ FSMLConfiguration::FSMLConfiguration() :
 void FSMLConfiguration::ReadFromJson(const TSharedPtr<FJsonObject>& Json, FSMLConfiguration& OutConfiguration, bool* OutIsMissingSections) {
     bool bIsMissingSectionsInternal = false;
     
-    if (Json->HasTypedField<EJson::Boolean>(TEXT("enableCheatConsoleCommands"))) {
-        OutConfiguration.bEnableCheatConsoleCommands = Json->GetBoolField(TEXT("enableCheatConsoleCommands"));
-    } else {
-        bIsMissingSectionsInternal = true;
-    }
-    
     if (Json->HasTypedField<EJson::Array>(TEXT("disabledChatCommands"))) {
         const TArray<TSharedPtr<FJsonValue>>& DisabledChatCommands = Json->GetArrayField(TEXT("disabledChatCommands"));
         for (const TSharedPtr<FJsonValue>& Value : DisabledChatCommands) {
@@ -37,8 +31,6 @@ void FSMLConfiguration::ReadFromJson(const TSharedPtr<FJsonObject>& Json, FSMLCo
 }
 
 void FSMLConfiguration::WriteToJson(const TSharedPtr<FJsonObject>& OutJson, const FSMLConfiguration& Configuration) {
-    OutJson->SetBoolField(TEXT("enableCheatConsoleCommands"), Configuration.bEnableCheatConsoleCommands);
-
     TArray<TSharedPtr<FJsonValue>> DisabledChatCommands;
     for (const FString& Value : Configuration.DisabledChatCommands) {
         DisabledChatCommands.Add(MakeShareable(new FJsonValueString(Value)));
