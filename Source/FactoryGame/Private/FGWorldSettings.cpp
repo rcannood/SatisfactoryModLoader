@@ -96,7 +96,7 @@ AFGWorldSettings::AFGWorldSettings() : Super() {
 	this->mAudioVolumeSubsystem = nullptr;
 	this->mFoliageRemovalSubsystem = nullptr;
 	this->mConveyorItemSubsystem = nullptr;
-	this->mPhotoModeManager = nullptr;
+	// this->mPhotoModeManager = nullptr;
 }
 void AFGWorldSettings::BeginDestroy() {
 	Super::BeginDestroy();
@@ -174,7 +174,7 @@ void AFGWorldSettings::PreInitializeComponents() {
 	SpawnSubsystem<AFGFoliageRemovalSubsystem>(mFoliageRemovalSubsystem, SubsystemClasses->mFoliageRemovalSubsystemClass, TEXT("FoliageRemovalSubsystem"));
 	SpawnSubsystem<AFGAudioVolumeSubsystem>(mAudioVolumeSubsystem, AFGAudioVolumeSubsystem::StaticClass(), TEXT("AudioVolumeSubsystem"));
 	SpawnSubsystem<AFGBuildableSubsystem>(mBuildableSubsystem, SubsystemClasses->mBuildableSubsystemClass.Get(), TEXT("BuildableSubsystem"));
-	SpawnSubsystem<AFGPhotoModeManager>(mPhotoModeManager, SubsystemClasses->mPhotoModeManagerClass, TEXT("PhotoModeManager"));
+	// SpawnSubsystem<AFGPhotoModeManager>(mPhotoModeManager, SubsystemClasses->mPhotoModeManagerClass, TEXT("PhotoModeManager"));
 
 	if (GetWorld()->WorldType != EWorldType::Editor && GetWorld()->WorldType != EWorldType::EditorPreview) {
 		SpawnSubsystem<AFGConveyorItemSubsystem>(mConveyorItemSubsystem, SubsystemClasses->mConveyorItemSubsystemClass, TEXT("ConveyorItemSubsystem"));

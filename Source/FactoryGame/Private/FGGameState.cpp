@@ -122,7 +122,6 @@ void AFGGameState::Tick(float delta) {
 			mReplicadedOnlineNumPubliclConnections = MaxPlayers;
 		}
 	}
-	FString& Wtf = FString();
 }
 
 void AFGGameState::BeginPlay() {
@@ -229,7 +228,7 @@ void AFGGameState::CheckClientSubsystemsValid() {
 			mOnClientSubsystemsValid.Broadcast();
 			return;
 		}
-		GetWorld()->GetTimerManager().SetTimerForNextTick(this, CheckClientSubsystemsValid);
+		// GetWorld()->GetTimerManager().SetTimerForNextTick(this, CheckClientSubsystemsValid);
 	}
 }
 
@@ -430,9 +429,7 @@ void AFGGameState::OnRep_BuildingColorSlot_Data(){ }
 
 void AFGGameState::OnRep_BuildableLightColorSlots(){ }
 
-void AFGGameState::ClaimPlayerColor( AFGPlayerState* playerState) {
-	mAvailablePlayerColors
-}
+void AFGGameState::ClaimPlayerColor( AFGPlayerState* playerState) { }
 
 void AFGGameState::ReleasePlayerColor( AFGPlayerState* playerState){ }
 

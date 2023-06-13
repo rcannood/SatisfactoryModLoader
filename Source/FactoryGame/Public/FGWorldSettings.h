@@ -25,7 +25,7 @@ public:
 	FORCEINLINE class AFGBuildableSubsystem* GetBuildableSubsystem() const { return mBuildableSubsystem; }
 	FORCEINLINE class AFGFoliageRemovalSubsystem* GetFoliageRemovalSubsystem() const { return mFoliageRemovalSubsystem; }
 	FORCEINLINE class AFGConveyorItemSubsystem* GetConveyorItemSubsystem() const { return mConveyorItemSubsystem; }
-	FORCEINLINE class AFGPhotoModeManager* GetPhotoModeManager() const { return mPhotoModeManager; }
+	// FORCEINLINE class AFGPhotoModeManager* GetPhotoModeManager() const { return mPhotoModeManager; }
 
 	// Begin UObject interface
 	virtual void BeginDestroy() override;
@@ -200,8 +200,8 @@ private:
 	UPROPERTY()
 	class AFGConveyorItemSubsystem* mConveyorItemSubsystem;
 
-	UPROPERTY()
-	class AFGPhotoModeManager* mPhotoModeManager;
+	/*UPROPERTY()
+	class AFGPhotoModeManager* mPhotoModeManager;*/
 
 
 #if WITH_EDITORONLY_DATA
